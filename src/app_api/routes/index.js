@@ -63,6 +63,9 @@ api.post('/contactAdd', getUser, function (req, res) {
     contact.message = req.body.message
 
     contact.save(async function (err, contact) {
+        if (err) {
+            logger.error(err)
+        }
         let rootTag = loadTemplate(templates.CONFIRM_MENU)
         let response = Response.fromTag(rootTag)
         res.json(response.toJSON())
