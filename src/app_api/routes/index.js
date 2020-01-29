@@ -59,7 +59,7 @@ api.post('/contactAdd', getUser, function (req, res) {
     contact.user = req.user
     contact.fullName = capitalize(req.body.fullName)
     contact.email = req.body.email
-    contact.interest = req.body.interest
+    contact.interest = req.body.interest.toString()
     contact.message = req.body.message
 
     contact.save(async function (err, contact) {
