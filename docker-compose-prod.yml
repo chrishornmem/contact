@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+    contact:
+      networks:
+        - app-wrapper_internal
+      env_file:
+        - ./environment
+
+networks:
+    app-wrapper_internal:
+        name: app-wrapper_internal
+        external: true

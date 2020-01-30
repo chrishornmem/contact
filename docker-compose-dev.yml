@@ -1,0 +1,11 @@
+version: "3.7"
+
+services
+  contact:
+    env_file:
+      - ./environment
+    volumes:
+      - ./src:/usr/src/app/src/
+    ports:
+      - 5050:5050
+
