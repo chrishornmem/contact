@@ -3,11 +3,18 @@ version: "3.7"
 services:
     contact:
       networks:
-        - app-wrapper_internal
+        internal:
+          aliases:
+            - contact
+        dmz:
+          aliases:
+            - contact
       env_file:
         - ./environment
 
 networks:
-    app-wrapper_internal:
-        name: app-wrapper_internal
+    dmz:
+        name: dmz
         external: true
+    internal:
+        name: internal
